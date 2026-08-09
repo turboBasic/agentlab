@@ -19,7 +19,22 @@ from agentlab.tools.permissions import AutoApprovePermissionGate, InteractivePer
 from agentlab.tools.shell import RunShellTool
 from agentlab.ui.console import render_turn
 
+__version__ = "0.1.0"
+
 app = typer.Typer(add_completion=False, help="A terminal coding-assistant agent.")
+
+
+def _version_callback(value: bool) -> None:
+    if value:
+        typer.echo(f"agentlab {__version__}")
+        raise typer.Exit()
+
+
+@app.callback()
+def _main(  # pyright: ignore[reportUnusedFunction]
+    version: bool = typer.Option(False, "--version", help="Show version and exit."),
+) -> None:
+    _version_callback(version)
 
 
 def _build_tools(workdir: Path) -> dict[str, Tool]:
