@@ -58,3 +58,17 @@ The default model shipped in `config.py` is an OpenRouter-only slug
 (`deepseek/deepseek-v4-flash-0731`), so it has no direct-Anthropic equivalent — switching
 `AGENTLAB_PROVIDER` to `anthropic` requires also setting `AGENTLAB_MODEL` to a Claude
 model id.
+
+## Free OpenRouter model option
+
+OpenRouter also hosts zero-cost `:free` model variants. For a coding-agent workload,
+[Poolside](https://poolside.ai)'s Laguna S 2.1 is a solid free pick — it's one of the
+most-used free models on OpenRouter and is purpose-built for coding-agent tasks
+(70.2% on Terminal-Bench 2.1), with a 262K context window and tool-calling support:
+
+```bash
+AGENTLAB_MODEL=poolside/laguna-s-2.1:free
+```
+
+Free `:free` variants are rate-limited and rotate on OpenRouter's side, so treat this as
+an experimentation/fallback option rather than a production default.
