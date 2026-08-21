@@ -6,6 +6,7 @@ from pathlib import Path
 import typer
 from rich.console import Console
 
+from agentlab import __version__
 from agentlab.agent.loop import AgentLoop
 from agentlab.agent.session import Session
 from agentlab.config import Settings
@@ -19,9 +20,11 @@ from agentlab.tools.permissions import AutoApprovePermissionGate, InteractivePer
 from agentlab.tools.shell import RunShellTool
 from agentlab.ui.console import render_turn
 
-__version__ = "0.1.0"
-
-app = typer.Typer(add_completion=False, help="A terminal coding-assistant agent.")
+app = typer.Typer(
+    add_completion=False,
+    help="A terminal coding-assistant agent.",
+    no_args_is_help=True,
+)
 
 
 def _version_callback(value: bool) -> None:
@@ -30,11 +33,23 @@ def _version_callback(value: bool) -> None:
         raise typer.Exit()
 
 
+@app.command()
+def version() -> None:
+    """Show the agentlab version."""
+    typer.echo(f"agentlab {__version__}")
+
+
 @app.callback()
-def _main(  # pyright: ignore[reportUnusedFunction]
-    version: bool = typer.Option(False, "--version", help="Show version and exit."),
+def main(
+    _version: bool = typer.Option(
+        False,
+        "--version",
+        help="Show version and exit.",
+        callback=_version_callback,
+        is_eager=True,
+    ),
 ) -> None:
-    _version_callback(version)
+    pass
 
 
 def _build_tools(workdir: Path) -> dict[str, Tool]:
