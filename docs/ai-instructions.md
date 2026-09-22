@@ -56,7 +56,8 @@ Non-negotiable design decisions (do not silently change these):
 ├── mise.toml                  # tool versions + dev tasks
 ├── pyproject.toml             # deps, ruff, pyright, pytest config
 ├── .env.template              # op:// secret references for `op run`
-├── docs/ai-instructions.md    # this file — authoritative AI instructions
+├── docs/
+│   └── ai-instructions.md     # this file — authoritative AI instructions
 ├── src/agentlab/
 │   ├── cli.py                 # Typer entrypoint
 │   ├── config.py              # pydantic-settings: provider/model/keys
