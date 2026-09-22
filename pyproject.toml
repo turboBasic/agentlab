@@ -25,6 +25,9 @@ dev = [
   "ruff>=0.9",
   "pyright>=1.1.390",
   "pre-commit>=4.0",
+  "jupyter>=1.1.1",
+  "ipykernel>=7.3.0",
+  "python-dotenv>=1.2.2",
 ]
 
 [build-system]

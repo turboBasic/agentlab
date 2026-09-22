@@ -1,0 +1,32 @@
+# Project vocabulary: repository names, tooling and library identifiers.
+# One word per line; case-insensitive unless the entry is capitalised.
+
+# --- Names ---
+
+# --- Repository and tooling ---
+actionlint
+agentlab
+commitizen
+cspell
+deepseek
+dotenv
+mise
+openrouter
+prek
+pyright
+pytest
+ruff
+taplo
+
+# --- Publisher handles: GitHub actions and VS Code extensions ---
+
+# --- Library and API identifiers ---
+
+# --- Config keys ---
+addopts
+
+# --- Repository jargon ---
+callee
+docstrings
+metacharacter
+typecheck
