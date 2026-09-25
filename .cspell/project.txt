@@ -11,6 +11,7 @@ cspell
 deepseek
 dotenv
 llama
+maverick
 meta
 mise
 mistralai

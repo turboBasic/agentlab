@@ -41,11 +41,13 @@ anthropic.AsyncAnthropic(
 ## 4. Model IDs are namespaced on OpenRouter
 
 | Purpose                    | OpenRouter model ID                                                | Price ($/M tokens, in / out) |
-| -------------------------- | -------------------------------------------------------------------| ---------------------------- |
+| -------------------------- | ------------------------------------------------------------------ | ---------------------------- |
 | Cheap+fast driver          | `deepseek/deepseek-v4.1-flash`                                     | $0.30 / $1.20                |
 | DeepSeek pinned snapshot   | `deepseek/deepseek-v4-flash-0731`                                  | $0.03 / $0.32                |
 | DeepSeek heavier tier      | `deepseek/deepseek-v4-pro`                                         | $0.78 / $1.57                |
-| Meta Llama                 | `meta-llama/llama-3.1-8b-instruct`                                 | $0.05 / $0.08                |
+| Meta Llama cheap+fast      | `meta-llama/llama-3.1-8b-instruct`                                 | $0.05 / $0.08                |
+| Meta Llama heavier tier    | `meta-llama/llama-3.3-70b-instruct`                                | $0.10 / $0.32                |
+| Meta Llama flagship        | `meta-llama/llama-4-maverick`                                      | $0.19 / $0.65                |
 | Mistral                    | `mistralai/mistral-small-3.1-24b-instruct`                         | $0.35 / $0.56                |
 | Qwen coder                 | `qwen/qwen-2.5-coder-32b-instruct`                                 | $0.66 / $1.00                |
 | Anthropic flagship         | `anthropic/claude-opus-5`                                          | $5.00 / $25.00               |
