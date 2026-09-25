@@ -51,7 +51,7 @@ environment (or `.env.template`):
 
 ```bash
 AGENTLAB_PROVIDER=anthropic
-AGENTLAB_MODEL=claude-sonnet-4-5-20250929   # a real Anthropic model id
+AGENTLAB_MODEL=claude-sonnet-5   # a real Anthropic model id
 ```
 
 The default model shipped in `config.py` is an OpenRouter-only slug

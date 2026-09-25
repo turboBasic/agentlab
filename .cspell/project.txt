@@ -11,10 +11,12 @@ cspell
 deepseek
 dotenv
 mise
+mistralai
 openrouter
 prek
 pyright
 pytest
+qwen
 ruff
 taplo
 
