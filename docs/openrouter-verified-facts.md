@@ -40,17 +40,18 @@ anthropic.AsyncAnthropic(
 
 ## 4. Model IDs are namespaced on OpenRouter
 
-A bare `claude-opus-5` will 404. Use:
-
-| Purpose                    | OpenRouter model ID                                                                                      |
-| -------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Cheap+fast driver          | `deepseek/deepseek-v4-flash`                                                                             |
-| DeepSeek pinned snapshot   | `deepseek/deepseek-v4-flash-0731`                                                                        |
-| DeepSeek heavier tier      | `deepseek/deepseek-v4-pro`                                                                               |
-| Anthropic flagship         | `anthropic/claude-opus-5`                                                                                |
-| Anthropic balanced         | `anthropic/claude-sonnet-5`                                                                              |
-| Anthropic cheap            | `anthropic/claude-haiku-4.5`                                                                             |
-| Floating "latest" pointers | `~anthropic/claude-opus-latest`, `~anthropic/claude-sonnet-latest`, `~deepseek/deepseek-v4-flash-latest` |
+| Purpose                    | OpenRouter model ID                                                | Price ($/M tokens, in / out) |
+| -------------------------- | -------------------------------------------------------------------| ---------------------------- |
+| Cheap+fast driver          | `deepseek/deepseek-v4.1-flash`                                     | $0.30 / $1.20                |
+| DeepSeek pinned snapshot   | `deepseek/deepseek-v4-flash-0731`                                  | $0.03 / $0.32                |
+| DeepSeek heavier tier      | `deepseek/deepseek-v4-pro`                                         | $0.78 / $1.57                |
+| Meta Llama                 | `meta-llama/llama-3.1-8b-instruct`                                 | $0.05 / $0.08                |
+| Mistral                    | `mistralai/mistral-small-3.1-24b-instruct`                         | $0.35 / $0.56                |
+| Qwen coder                 | `qwen/qwen-2.5-coder-32b-instruct`                                 | $0.66 / $1.00                |
+| Anthropic flagship         | `anthropic/claude-opus-5`                                          | $5.00 / $25.00               |
+| Anthropic balanced         | `anthropic/claude-sonnet-5`                                        | $2.00 / $10.00               |
+| Anthropic cheap            | `anthropic/claude-haiku-4.5`                                       | $1.00 / $5.00                |
+| Floating "latest" pointers | `~anthropic/claude-*-latest`, `~deepseek/deepseek-v4-flash-latest` | -                            |
 
 ## 5. DeepSeek V4 Flash always emits a leading `thinking` block
 

@@ -10,6 +10,8 @@ commitizen
 cspell
 deepseek
 dotenv
+llama
+meta
 mise
 mistralai
 openrouter
