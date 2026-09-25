@@ -1,0 +1,27 @@
+[
+  {
+    "task": "Extract AWS instance type from a given JSON object containing instance details",
+    "inputs": {
+      "instance_details": "{\"InstanceType\": \"t2.micro\", \"Region\": \"US-East-1\"}"
+    },
+    "expected_output": "t2.micro"
+  },
+  {
+    "task": "Validate an AWS Lambda function event with a specific signature",
+    "inputs": {
+      "event": "{\"Records\":[{\"awsRegion\": \"us-east-1\", \"requestParameters\": {\"param1\": \"value1\"}}]}",
+      "signature": "us-east-1"
+    },
+    "expected_output": "True"
+  },
+  {
+    "task": "Check if a given AWS IAM user has a specific set of permissions",
+    "inputs": {
+      "user": "{\"User\": {\"Arn\": \"arn:aws:iam::123456789012:user/Alice\", \"Permissions\": ['s3:GetObject']}}",
+      "permissions": [
+        "s3:GetObject"
+      ]
+    },
+    "expected_output": "True"
+  }
+]
