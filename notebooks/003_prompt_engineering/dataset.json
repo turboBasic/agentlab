@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "150",
+      "weight": "45",
+      "goal": "maintain current weight",
+      "restrictions": "lactose intolerance"
+    },
+    "solution_criteria": [
+      "Provides a daily caloric intake within 500 calories of the athlete's basal metabolic rate",
+      "Includes lactose-free meal options",
+      "Meets the athlete's daily protein requirements for endurance running",
+      "Includes at least 8 servings of fruits and vegetables"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with an 150cm, 45kg endurance runner with a lactose intolerance and goal to maintain current weight"
+  },
+  {
+    "prompt_inputs": {
+      "height": "190",
+      "weight": "70",
+      "goal": "gain muscle mass",
+      "restrictions": "seafood allergy"
+    },
+    "solution_criteria": [
+      "The meal plan provides at least 1200 calories per meal",
+      "The meal plan includes a balanced mix of protein, carbohydrates, and healthy fats",
+      "The meal plan does not include any seafood",
+      "The meal plan is tailored for a 1-day consumption"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a 190cm, 70kg painter with a goal to gain muscle mass and a seafood allergy"
+  },
+  {
+    "prompt_inputs": {
+      "height": "180",
+      "weight": "70",
+      "goal": "Optimize performance for high-intensity interval training",
+      "restrictions": "Vegan diet with a focus on plant-based protein sources"
+    },
+    "solution_criteria": [
+      "The meal plan includes a balanced mix of protein, carbohydrates, and healthy fats to support high-intensity interval training",
+      "All meals are plant-based and adhere to a vegan diet",
+      "The meal plan is compact and concise, with clear instructions and a total daily caloric intake that meets the athlete's energy needs",
+      "The meal plan provides a minimum of 1.2 grams of protein per kilogram of body weight to support muscle growth and repair"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with high-intensity interval training athlete with restrictive vegan diet"
+  }
+]

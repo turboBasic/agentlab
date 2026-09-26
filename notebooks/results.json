@@ -1,0 +1,32 @@
+[
+  {
+    "output": "\nimport re\n\ndef validate_iam_username(username):\n    pattern = r'^[a-z0-9]([a-z0-9\\-]{0,61}[a-z0-9])?(([\\.]?[a-z0-9]))^([a-z0-9]([a-z0-9\\-]{0,61}([a-z0-9]))?)?$'\n    if re.match(pattern, username):\n        return True\n    else:\n        return False\n\n# example usage\nprint(validate_iam_username(\"john-doe\"))  # returns True\nprint(validate_iam_username(\"JohnDoe\"))  # returns False\nprint(validate_iam_username(\"johndoe12345678901234567890123456789012345678901234567890\"))  # returns False\nprint(validate_iam_username(\"johndoe-\"))  # returns False\nprint(validate_iam_username(\"johndoe.\"))  # returns False\n",
+    "test_case": {
+      "task": "Given an AWS IAM user's username, validate if it meets the naming policy rule (only contains lowercase letters, digits, and hyphens, and its length is between 1 and 64 characters). Generate a regex pattern to enforce this validation.",
+      "format": "regex",
+      "solution_criteria": "The regex pattern should only match valid usernames and contain at least one special character."
+    },
+    "score": 8.5,
+    "reasoning": "The solution is partially effective in enforcing the naming policy rule, but it could be improved by simplifying the regex pattern and adding more functionality to the function."
+  },
+  {
+    "output": "\nimport json\n\nconfig = {\n    \"FunctionName\": \"my-lambda-function\",\n    \"Runtime\": \"python3.9\",\n    \"Handler\": \"lambda_function.handler\",\n    \"Environment\": {\n        \"Variables\": {\n            \"VARIABLE_1\": \"value1\",\n            \"VARIABLE_2\": \"value2\"\n        }\n    }\n}\n\nprint(json.dumps(config, indent=4))\n",
+    "test_case": {
+      "task": "Create a JSON object that represents an AWS Lambda function configuration. The configuration should include the function's name, runtime, handler, and environment variables.",
+      "format": "json",
+      "solution_criteria": "The JSON object should contain all the required fields, and the environment variables should be defined as a key-value pair."
+    },
+    "score": 4.0,
+    "reasoning": "The provided code meets the requirements, but it should be wrapped in a single JSON object, not just dumped as a JSON string."
+  },
+  {
+    "output": "\nimport re\n\ndef get_s3_bucket_name(key):\n    return re.match(r'^([^/]+)-[^/]+$', key).group(1)\n",
+    "test_case": {
+      "task": "Write a Python function that takes an S3 object key as input, and returns the bucket name from the key. The function should handle S3 keys in the format 'bucket-name/object-key'.",
+      "format": "python",
+      "solution_criteria": "The function should use the built-in Python string methods to extract the bucket name, and should handle keys with different lengths."
+    },
+    "score": 8.0,
+    "reasoning": "The function has some strengths, but it is not robust and may fail to handle different edge cases. The use of regular expressions is a good approach, but it may not be the most efficient or Pythonic way to extract the bucket name."
+  }
+]
