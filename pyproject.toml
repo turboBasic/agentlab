@@ -43,7 +43,7 @@ packages = ["src/agentlab"]
 line-length = 100
 target-version = "py314"
 src = ["src", "tests"]
-extend-exclude = ["notebooks/004_tools"] # scratch course notebooks with pasted-in code
+extend-exclude = ["notebooks/004_tools", "notebooks/006_rag"] # scratch course notebooks with pasted-in code
 
 [tool.ruff.lint]
 select = [
