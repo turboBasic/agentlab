@@ -22,6 +22,7 @@ agentlab = "agentlab.cli:app"
 dev = [
   "ipykernel>=7.3.0",
   "jupyter>=1.1.1",
+  "pandas>=3.0.6",
   "pre-commit>=4.0",
   "pyright>=1.1.390",
   "pytest-asyncio>=0.25",
