@@ -3,6 +3,7 @@ import os
 import sys
 from contextlib import AsyncExitStack
 
+from anthropic import Anthropic
 from core.claude import Claude
 from core.cli import CliApp
 from core.cli_chat import CliChat
@@ -13,15 +14,24 @@ load_dotenv()
 
 # Anthropic Config
 claude_model = os.getenv("CLAUDE_MODEL", "")
-anthropic_api_key = os.getenv("ANTHROPIC_API_KEY", "")
+anthropic_api_key = os.getenv("OPENROUTER_API_KEY", "")
 
 
 assert claude_model, "Error: CLAUDE_MODEL cannot be empty. Update .env"
-assert anthropic_api_key, "Error: ANTHROPIC_API_KEY cannot be empty. Update .env"
+assert anthropic_api_key, "Error: OPENROUTER_API_KEY cannot be empty. Update .env"
+
+
+class ClaudeMy(Claude):
+    def __init__(self, api_key: str, model: str):
+        super().__init__(model=model)
+        self.client = Anthropic(
+            base_url="https://openrouter.ai/api",
+            api_key=api_key,
+        )
 
 
 async def main():
-    claude_service = Claude(model=claude_model)
+    claude_service = ClaudeMy(api_key=anthropic_api_key, model=claude_model)
 
     server_scripts = sys.argv[1:]
     clients = {}
