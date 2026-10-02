@@ -1,6 +1,7 @@
 import os
 
-from tools.document import binary_document_to_markdown
+import pytest
+from tools.document import binary_document_to_markdown, document_path_to_markdown
 
 
 class TestBinaryDocumentToMarkdown:
@@ -43,3 +44,17 @@ class TestBinaryDocumentToMarkdown:
         assert len(result) > 0
         # Check for typical markdown formatting - this will depend on your actual test file
         assert "#" in result or "-" in result or "*" in result
+
+
+class TestDocumentPathToMarkdown:
+    FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
+
+    @pytest.mark.parametrize("name", ["mcp_docs.docx", "mcp_docs.pdf"])
+    def test_converts_fixture(self, name):
+        result = document_path_to_markdown(os.path.join(self.FIXTURES_DIR, name))
+        assert isinstance(result, str)
+        assert len(result) > 0
+
+    def test_missing_file_raises(self):
+        with pytest.raises(FileNotFoundError):
+            document_path_to_markdown(os.path.join(self.FIXTURES_DIR, "nope.pdf"))
