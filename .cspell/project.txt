@@ -34,5 +34,6 @@ addopts
 # --- Repository jargon ---
 callee
 docstrings
+fastmcp
 metacharacter
 typecheck
